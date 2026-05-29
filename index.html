@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMarket for Pi</title>
+    <style>
+        :root {
+            --pi-purple: #e2b007; /* Pi altın sarısı vurgu */
+            --pi-bg: #1a1525; /* Pi Browser koyu mor arka plan teması */
+            --pi-card: #251f38;
+            --text-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--pi-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--pi-card);
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--pi-purple);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+            color: var(--pi-purple);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--pi-card);
+            color: white;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--pi-purple);
+            padding-left: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background-color: var(--pi-card);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .card:active {
+            transform: scale(0.95);
+        }
+
+        .card icon {
+            font-size: 30px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .pi-btn {
+            background-color: var(--pi-purple);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TechMarket for Pi</h1>
+    </header>
+
+    <div class="container">
+        <input type="text" class="search-bar" placeholder="Hırdavat, yedek parça veya usta ara...">
+
+        <div class="section-title">Hizmet Alanları</div>
+        <div class="grid">
+            <div class="card" onclick="alert('Pazar yeri yakında açılıyor!')">
+                <span style="font-size:30px;">⚙️</span>
+                <h3>Yedek Parça</h3>
+                <p style="font-size:12px; color:#aaa;">P2P Donanım Alım-Satım</p>
+            </div>
+            <div class="card" onclick="alert('AI Teknik Rehber yükleniyor...')">
+                <span style="font-size:30px;">🤖</span>
+                <h3>AI Teknik Rehber</h3>
+                <p style="font-size:12px; color:#aaa;">Arıza & Tamir Kılavuzu</p>
+            </div>
+        </div>
+
+        <div class="section-title">Pi Ekosistemi</div>
+        <button class="pi-btn" onclick="connectPiCuzdan()">Pi Cüzdanını Bağla (SDK Test)</button>
+    </div>
+
+    <script>
+        function connectPiCuzdan() {
+            alert("Pi SDK bağlantısı başlatılıyor... Kimlik doğrulama simüle edildi.");
+        }
+    </script>
+</body>
+</html>
